@@ -19,7 +19,7 @@
         <header>
             <div class="header-content">
                 <div class="avatar-section">
-                    <img src="./index_files/avatar.png" alt="My Avatar" class="avatar">
+                    <img src="./img/yoshkoz.png" alt="YoShKoZ" class="avatar">
                     <div class="status-text">
                         <span class="online-dot"></span> ONLINE NOW
                     </div>
@@ -42,11 +42,32 @@
         <main class="main-grid">
             <!-- Left column -->
             <div class="column">
+                <section class="card interactive-card" id="hobbies">
+                    <h2>🎮 MY HOBBIES</h2>
+                    <div class="card-content">
+                        <img src="./img/1uk75p8esw8d1.jpeg" alt="Hobby" class="mini-gif"
+                            style="width: 100px; height: 100px;">
+                        <ul class="compact-list" style="margin: 0;">
+                            <li>🖨️ 3D Printing (Prusa Mini)</li>
+                            <li>🎧 DJ & Music Production</li>
+                            <li>🃏 Magic: The Gathering</li>
+                            <li>⚔️ Jodo (4th Dan!)</li>
+                            <li>🚴‍♂️ Cycling</li>
+                            <li>🌍 Traveling</li>
+                            <li>🎨 Digital Art</li>
+                            <li>🕹️ Gaming</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Center column with featured content -->
+            <div class="column center-column">
                 <section class="card interactive-card" id="about">
                     <h2>📼 ABOUT ME</h2>
-                    <div class="card-content">
-                        <img src="https://media.giphy.com/media/3o7btNhMBytxAM6YBa/giphy.gif" alt="VHS"
-                            class="mini-gif">
+                    <div class="card-content" style="flex-direction: column; text-align: center;">
+                        <img src="https://media.giphy.com/media/3o7btNhMBytxAM6YBa/giphy.gif" alt="VHS" class="mini-gif"
+                            style="margin: 0 auto 10px;">
                         <p>Hey! I'm <strong>Yoshi</strong> – a creative technologist with 10+ years in graphic design,
                             3D printing, and web dev. When I'm not DJing or playing Magic: The Gathering,
                             I'm exploring Japan, gaming, or vibing to synth music! 🎧</p>
@@ -55,33 +76,11 @@
                         style="display: block; text-align: center; margin-top: 10px;">📖 FULL BIO</a>
                 </section>
 
-                <section class="card interactive-card" id="music">
-                    <h2>🎧 RADICAL PLAYLIST</h2>
-                    <div class="music-ticker">
-                        <marquee behavior="alternate" scrollamount="2">🎶 NOW SPINNING: A-ha, Depeche Mode, New Order 🎶
-                        </marquee>
-                    </div>
-                    <ul class="compact-list">
-                        <li>♪ A-ha — "Take On Me"</li>
-                        <li>♪ Depeche Mode — "Enjoy the Silence"</li>
-                        <li>♪ New Order — "Blue Monday"</li>
-                        <li>♪ The Cure — "Friday I'm In Love"</li>
-                    </ul>
-                </section>
+                <div class="center-gif-container">
+                    <img src="./img/yoshkoz_wallpaper_in_the_style_of_--ar_169_--sref_httpss.mj.r_4369db97-664b-429b-a8cf-daa73de6066e_2.png"
+                        alt="Synthwave Art" class="center-gif">
+                </div>
 
-                <section class="card interactive-card" id="hobbies">
-                    <h2>🎮 MY HOBBIES</h2>
-                    <ul class="compact-list">
-                        <li>🖨️ 3D Printing (Prusa Mini)</li>
-                        <li>🎧 DJ & Music Production</li>
-                        <li>🃏 Magic: The Gathering</li>
-                        <li>⚔️ Jodo (4th Dan!)</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Center column with featured content -->
-            <div class="column center-column">
                 <section class="card featured-card">
                     <h2>⭐ MY FAVORITES ⭐</h2>
                     <div class="favorites-grid">
@@ -107,11 +106,6 @@
                         </div>
                     </div>
                 </section>
-
-                <div class="center-gif-container">
-                    <img src="https://media.giphy.com/media/3oEjHB1EKuujDjYFWw/giphy.gif" alt="80s dancer"
-                        class="center-gif">
-                </div>
             </div>
 
             <!-- Right column -->
@@ -126,15 +120,16 @@
                     </ul>
                 </section>
 
-                <section class="card interactive-card" id="games">
-                    <h2>🕹️ HIGH SCORES</h2>
-                    <div class="games-grid">
-                        <span class="game-item">👾 Pac-Man</span>
-                        <span class="game-item">👾 Tetris</span>
-                        <span class="game-item">👾 Mario</span>
-                        <span class="game-item">👾 Zelda</span>
+                <section class="card interactive-card" id="guestbook">
+                    <h2>📝 GUESTBOOK</h2>
+                    <p style="color: #ccc; font-size: 13px; margin-bottom: 10px;">Leave a message and say hi! 👋</p>
+                    <div
+                        style="background: rgba(0,212,255,0.1); padding: 10px; border-radius: 3px; margin-bottom: 10px;">
+                        <p style="font-size: 12px; color: var(--neon-pink);">RetroFan2000</p>
+                        <p style="font-size: 11px; color: #999;">"This site is TUBULAR!"</p>
                     </div>
-                    <img src="https://media.giphy.com/media/mokQK7oyiR8Sk/giphy.gif" alt="Pac-Man" class="game-gif">
+                    <a href="guestbook.html" class="retro-btn" style="display: block; text-align: center;">✍️ SIGN
+                        IT</a>
                 </section>
 
                 <section class="card interactive-card updates-card">
