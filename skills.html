@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~SKILLS & PORTFOLIO~*~ | YoShKoZ's 80's Paradise</title>
+    <link href="./index_files/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            overflow: auto;
+        }
+
+        .portfolio-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            padding: 8px 15px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: var(--neon-purple);
+            color: #fff;
+        }
+
+        .page-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            color: var(--neon-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+        }
+
+        .skills-section {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .skills-section h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: var(--neon-pink);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--neon-purple);
+            text-align: center;
+        }
+
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skill-name {
+            width: 180px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .skill-bar-container {
+            flex: 1;
+            height: 20px;
+            background: #0a0a1a;
+            border: 2px solid var(--neon-purple);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: width 1s ease-out;
+        }
+
+        .skill-level {
+            width: 50px;
+            font-size: 12px;
+            color: var(--neon-blue);
+            text-align: right;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tool-item {
+            background: rgba(157, 0, 255, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .tool-item:hover {
+            background: rgba(255, 20, 147, 0.3);
+            transform: translateY(-3px);
+            border-color: var(--neon-pink);
+        }
+
+        .tool-item .icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .tool-item .name {
+            color: var(--text-primary);
+            font-size: 12px;
+            display: block;
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #1a0a2e, #0a1a2a);
+            border: 2px solid var(--neon-blue);
+            border-radius: 5px;
+            padding: 15px 20px;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .cert-badge .title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 9px;
+            color: var(--neon-pink);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cert-badge .issuer {
+            color: var(--neon-blue);
+            font-size: 11px;
+        }
+
+        .cert-badge .year {
+            color: #666;
+            font-size: 10px;
+            margin-top: 5px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .portfolio-content {
+            padding: 15px;
+        }
+
+        .portfolio-content h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 11px;
+            color: var(--neon-pink);
+            margin-bottom: 10px;
+        }
+
+        .portfolio-content p {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--neon-blue);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <div class="portfolio-container">
+        <a href="index.html" class="back-link">← BACK TO MAIN</a>
+
+        <h1 class="page-title">💻 SKILLS & PORTFOLIO 💻</h1>
+
+        <!-- Technical Skills -->
+        <div class="skills-section">
+            <h2>📊 SKILL LEVELS</h2>
+            <div class="skill-bars">
+                <div class="skill-item">
+                    <span class="skill-name">Desktop Publishing</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 95%;"></div>
+                    </div>
+                    <span class="skill-level">95%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">3D Printing</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 90%;"></div>
+                    </div>
+                    <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Prepress & Print</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 92%;"></div>
+                    </div>
+                    <span class="skill-level">92%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">HTML/CSS/JavaScript</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 75%;"></div>
+                    </div>
+                    <span class="skill-level">75%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Video Editing</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Adobe Creative Suite</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 85%;"></div>
+                    </div>
+                    <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Quality Assurance</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 88%;"></div>
+                    </div>
+                    <span class="skill-level">88%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools & Software -->
+        <div class="skills-section">
+            <h2>🛠️ TOOLS & SOFTWARE</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <span class="icon">🖨️</span>
+                    <span class="name">Heidelberg Prinect</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">📦</span>
+                    <span class="name">Packaging Pro</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">✂️</span>
+                    <span class="name">Signa Station</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">🎨</span>
+                    <span class="name">Adobe Acrobat</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">🖼️</span>
+                    <span class="name">Adobe Photoshop</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">✏️</span>
+                    <span class="name">Adobe Illustrator</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">📐</span>
+                    <span class="name">Adobe InDesign</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">🎬</span>
+                    <span class="name">Video Editing</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">🌐</span>
+                    <span class="name">WordPress</span>
+                </div>
+                <div class="tool-item">
+                    <span class="icon">🔧</span>
+                    <span class="name">Prusa Slicer</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="skills-section">
+            <h2>🏆 CERTIFICATIONS</h2>
+            <div class="certifications">
+                <div class="cert-badge">
+                    <span class="title">ISO 12647 Basic</span>
+                    <span class="issuer">PROSCO-X</span>
+                    <span class="year">Jun 2020</span>
+                </div>
+                <div class="cert-badge">
+                    <span class="title">Salesforce Adventurer</span>
+                    <span class="issuer">Trailhead</span>
+                    <span class="year">Dec 2022</span>
+                </div>
+                <div class="cert-badge">
+                    <span class="title">Golf GVB</span>
+                    <span class="issuer">NGF</span>
+                    <span class="year">-</span>
+                </div>
+                <div class="cert-badge">
+                    <span class="title">Jodo 4th Dan</span>
+                    <span class="issuer">NKR</span>
+                    <span class="year">Aug 2018</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Projects -->
+        <div class="skills-section">
+            <h2>📁 PROJECTS</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📺</div>
+                    <div class="portfolio-content">
+                        <h3>Arnhems Stadsdebat 2010</h3>
+                        <p>Camera operator for local city debate broadcast on RTV Connect (formerly TV Arnhem).</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Video</span>
+                            <span class="tag">Camera</span>
+                            <span class="tag">Broadcast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📦</div>
+                    <div class="portfolio-content">
+                        <h3>Packaging Design</h3>
+                        <p>11 years of professional packaging design and prepress work at Leeflang Verpakkingsdrukwerk.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">DTP</span>
+                            <span class="tag">Prepress</span>
+                            <span class="tag">ISO-9001</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🖨️</div>
+                    <div class="portfolio-content">
+                        <h3>3D Printing Projects</h3>
+                        <p>Various prototyping and creative projects using Prusa Mini 3D printer.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Prototyping</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🌐</div>
+                    <div class="portfolio-content">
+                        <h3>This Website!</h3>
+                        <p>Retro 80s-themed personal website hosted on Neocities. Pure HTML, CSS & JS.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Retro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

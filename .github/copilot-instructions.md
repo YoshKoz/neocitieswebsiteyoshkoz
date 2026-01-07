@@ -4,7 +4,12 @@
 Static personal website hosted on Neocities with an 80s retro/synthwave aesthetic. Pure HTML, CSS, and vanilla JavaScript—no build tools or frameworks. This is Yoshi Tacke's personal site showcasing hobbies, professional background, and 80s nostalgia.
 
 ## Architecture
-- **Multi-page static site**: `index.html` (home), `about.html` (full bio), `guestbook.html` (visitor messages)
+- **Multi-page static site**:
+  - `index.html` – Home page with 3-column grid layout
+  - `about.html` – Full bio, experience, languages, contact
+  - `skills.html` – Skill bars, tools, certifications, portfolio
+  - `links.html` – Webring-style links page, 88x31 buttons
+  - `guestbook.html` – Visitor messages (demo form)
 - **Shared styles**: `index_files/style.css` – CSS custom properties define the color palette
 - **Assets**: `index_files/` – local images and styles; external GIFs via Giphy CDN
 - **Page-specific styles**: Inline `<style>` blocks in subpages extend base styles

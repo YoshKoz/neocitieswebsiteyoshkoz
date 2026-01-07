@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~COOL LINKS~*~ | YoShKoZ's 80's Paradise</title>
+    <link href="./index_files/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            overflow: auto;
+        }
+
+        .links-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            padding: 8px 15px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: var(--neon-purple);
+            color: #fff;
+        }
+
+        .page-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            color: var(--neon-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+        }
+
+        .webring-banner {
+            background: linear-gradient(90deg, rgba(157, 0, 255, 0.3), rgba(0, 212, 255, 0.3));
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .webring-banner h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            color: var(--neon-pink);
+            margin-bottom: 10px;
+        }
+
+        .webring-banner p {
+            color: #ccc;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .webring-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .webring-nav a {
+            background: var(--neon-purple);
+            color: #fff;
+            padding: 8px 20px;
+            text-decoration: none;
+            font-size: 12px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .webring-nav a:hover {
+            background: var(--neon-pink);
+        }
+
+        .links-section {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .links-section h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            color: var(--neon-pink);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--neon-purple);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .link-button:hover {
+            background: rgba(255, 20, 147, 0.2);
+            border-color: var(--neon-pink);
+            transform: translateX(5px);
+        }
+
+        .link-button .icon {
+            font-size: 20px;
+        }
+
+        .link-button .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-button .name {
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+
+        .link-button .desc {
+            color: #888;
+            font-size: 10px;
+        }
+
+        .badges-section {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .badges-section h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            color: var(--neon-pink);
+            margin-bottom: 15px;
+        }
+
+        .badges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .badge-88x31 {
+            width: 88px;
+            height: 31px;
+            image-rendering: pixelated;
+            border: 1px solid var(--neon-purple);
+            transition: all 0.2s;
+        }
+
+        .badge-88x31:hover {
+            transform: scale(1.1);
+            border-color: var(--neon-pink);
+        }
+
+        .affiliate-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(157, 0, 255, 0.1);
+            border: 1px dashed var(--neon-purple);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .affiliate-note p {
+            color: #888;
+            font-size: 12px;
+        }
+
+        .affiliate-note a {
+            color: var(--neon-blue);
+        }
+
+        .my-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px;
+            background: #0a0a1a;
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+        }
+
+        .my-button img {
+            width: 88px;
+            height: 31px;
+        }
+
+        .my-button-code {
+            margin-top: 10px;
+            padding: 10px;
+            background: #0a0a1a;
+            border: 1px solid var(--neon-purple);
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 11px;
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <div class="links-container">
+        <a href="index.html" class="back-link">← BACK TO MAIN</a>
+
+        <h1 class="page-title">🔗 COOL LINKS 🔗</h1>
+
+        <!-- Webring Section -->
+        <div class="webring-banner">
+            <h2>🌐 RETRO WEB RING 🌐</h2>
+            <p>Part of the Neocities community celebrating the indie web!</p>
+            <div class="webring-nav">
+                <a href="#">← Previous</a>
+                <a href="https://neocities.org/browse">🏠 Hub</a>
+                <a href="#">Next →</a>
+            </div>
+        </div>
+
+        <!-- My Socials -->
+        <div class="links-section">
+            <h3>👤 MY PROFILES</h3>
+            <div class="links-grid">
+                <a href="https://linkedin.com/in/yoshitacke" target="_blank" class="link-button">
+                    <span class="icon">💼</span>
+                    <span class="text">
+                        <span class="name">LinkedIn</span>
+                        <span class="desc">Professional network</span>
+                    </span>
+                </a>
+                <a href="https://neocities.org" target="_blank" class="link-button">
+                    <span class="icon">🐱</span>
+                    <span class="text">
+                        <span class="name">Neocities</span>
+                        <span class="desc">This site's home</span>
+                    </span>
+                </a>
+                <a href="mailto:yoshitacke@outlook.com" class="link-button">
+                    <span class="icon">📧</span>
+                    <span class="text">
+                        <span class="name">Email Me</span>
+                        <span class="desc">yoshitacke@outlook.com</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cool Sites -->
+        <div class="links-section">
+            <h3>🌟 COOL SITES I LIKE</h3>
+            <div class="links-grid">
+                <a href="https://archive.org" target="_blank" class="link-button">
+                    <span class="icon">📚</span>
+                    <span class="text">
+                        <span class="name">Internet Archive</span>
+                        <span class="desc">The Wayback Machine</span>
+                    </span>
+                </a>
+                <a href="https://poolsuite.net" target="_blank" class="link-button">
+                    <span class="icon">🌴</span>
+                    <span class="text">
+                        <span class="name">Poolsuite FM</span>
+                        <span class="desc">Retro summer vibes</span>
+                    </span>
+                </a>
+                <a href="https://www.cameronsworld.net" target="_blank" class="link-button">
+                    <span class="icon">🌐</span>
+                    <span class="text">
+                        <span class="name">Cameron's World</span>
+                        <span class="desc">GeoCities archive art</span>
+                    </span>
+                </a>
+                <a href="https://theuselessweb.com" target="_blank" class="link-button">
+                    <span class="icon">🎲</span>
+                    <span class="text">
+                        <span class="name">The Useless Web</span>
+                        <span class="desc">Random weird sites</span>
+                    </span>
+                </a>
+                <a href="https://www.synthwave.com" target="_blank" class="link-button">
+                    <span class="icon">🎹</span>
+                    <span class="text">
+                        <span class="name">Synthwave</span>
+                        <span class="desc">The sound of the 80s</span>
+                    </span>
+                </a>
+                <a href="https://wiby.me" target="_blank" class="link-button">
+                    <span class="icon">🔍</span>
+                    <span class="text">
+                        <span class="name">Wiby</span>
+                        <span class="desc">Old web search engine</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="links-section">
+            <h3>🛠️ WEBMASTER RESOURCES</h3>
+            <div class="links-grid">
+                <a href="https://sadgrl.online/webmastery/" target="_blank" class="link-button">
+                    <span class="icon">📖</span>
+                    <span class="text">
+                        <span class="name">Sadgrl's Webmastery</span>
+                        <span class="desc">Learn HTML/CSS</span>
+                    </span>
+                </a>
+                <a href="https://cyber.dabamos.de/88x31/" target="_blank" class="link-button">
+                    <span class="icon">🏷️</span>
+                    <span class="text">
+                        <span class="name">88x31 Buttons</span>
+                        <span class="desc">Classic web buttons</span>
+                    </span>
+                </a>
+                <a href="https://gifcities.org" target="_blank" class="link-button">
+                    <span class="icon">✨</span>
+                    <span class="text">
+                        <span class="name">GifCities</span>
+                        <span class="desc">Retro GIF search</span>
+                    </span>
+                </a>
+                <a href="https://fonts.google.com" target="_blank" class="link-button">
+                    <span class="icon">🔤</span>
+                    <span class="text">
+                        <span class="name">Google Fonts</span>
+                        <span class="desc">Free web fonts</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 88x31 Badges -->
+        <div class="badges-section">
+            <h3>🏷️ 88x31 BUTTON COLLECTION</h3>
+            <div class="badges-grid">
+                <img src="https://web.archive.org/web/20091026234846/http://www.geocities.com/Hollywood/Hills/7829/netscape.gif"
+                    alt="Netscape Now" class="badge-88x31" onerror="this.style.display='none'">
+                <a href="https://neocities.org"><img src="https://neocities.org/img/neocitiesbutton2.gif"
+                        alt="Neocities" class="badge-88x31"></a>
+                <img src="https://anlucas.neocities.org/buttons/transnow2.gif" alt="Trans Rights" class="badge-88x31"
+                    onerror="this.style.display='none'">
+                <img src="https://anlucas.neocities.org/buttons/linux.gif" alt="Linux" class="badge-88x31"
+                    onerror="this.style.display='none'">
+                <img src="https://anlucas.neocities.org/buttons/anythingbut.gif" alt="Anything but Chrome"
+                    class="badge-88x31" onerror="this.style.display='none'">
+            </div>
+
+            <div class="affiliate-note">
+                <p>Want to link to my site? Use this button!</p>
+                <div class="my-button">
+                    <div
+                        style="background: linear-gradient(90deg, #ff1493, #9d00ff); padding: 5px 10px; font-family: 'Press Start 2P', monospace; font-size: 6px; color: white; width: 88px; height: 31px; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
+                        YoShKoZ
+                    </div>
+                </div>
+                <div class="my-button-code">
+                    &lt;a href="YOUR_NEOCITIES_URL"&gt;&lt;img src="YOUR_BUTTON_URL"&gt;&lt;/a&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- Japanese Interests -->
+        <div class="links-section">
+            <h3>🇯🇵 JAPANESE INTERESTS</h3>
+            <div class="links-grid">
+                <a href="https://www.kendokai-higashi.nl" target="_blank" class="link-button">
+                    <span class="icon">⚔️</span>
+                    <span class="text">
+                        <span class="name">Kendo Kai Higashi</span>
+                        <span class="desc">My kendo club</span>
+                    </span>
+                </a>
+                <a href="https://www.nkr.nl" target="_blank" class="link-button">
+                    <span class="icon">🥋</span>
+                    <span class="text">
+                        <span class="name">NKR</span>
+                        <span class="desc">Dutch Kendo Federation</span>
+                    </span>
+                </a>
+                <a href="https://www.abunai.nl" target="_blank" class="link-button">
+                    <span class="icon">🎌</span>
+                    <span class="text">
+                        <span class="name">Abunai!</span>
+                        <span class="desc">Anime convention</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
