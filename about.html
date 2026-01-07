@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~ABOUT YOSHI~*~ | YoShKoZ's 80's Paradise</title>
+    <link href="./index_files/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            overflow: auto;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            padding: 8px 15px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: var(--neon-purple);
+            color: #fff;
+        }
+
+        .page-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            color: var(--neon-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+        }
+
+        .bio-header {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+            padding: 25px;
+        }
+
+        .bio-avatar {
+            width: 150px;
+            height: 150px;
+            border: 4px solid var(--neon-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--neon-blue);
+            flex-shrink: 0;
+        }
+
+        .bio-intro h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 18px;
+            color: var(--neon-pink);
+            margin-bottom: 10px;
+        }
+
+        .bio-intro .tagline {
+            color: var(--neon-blue);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .bio-intro p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: var(--neon-pink);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--neon-purple);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category h4 {
+            color: var(--neon-blue);
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .skill-category li::before {
+            content: '▸ ';
+            color: var(--neon-pink);
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .hobby-item {
+            background: rgba(157, 0, 255, 0.2);
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .hobby-item:hover {
+            background: rgba(255, 20, 147, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .hobby-item .emoji {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hobby-item span {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .experience-item {
+            padding: 15px;
+            border-left: 3px solid var(--neon-pink);
+            margin-bottom: 15px;
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .experience-item h4 {
+            color: var(--neon-blue);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            color: var(--neon-pink);
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .experience-item p {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .contact-item .icon {
+            font-size: 20px;
+        }
+
+        .contact-item a {
+            color: var(--neon-blue);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--neon-pink);
+        }
+
+        .languages-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language {
+            padding: 10px 20px;
+            background: rgba(157, 0, 255, 0.2);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .language .flag {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .language .name {
+            color: var(--text-primary);
+            font-size: 12px;
+        }
+
+        .language .level {
+            color: #666;
+            font-size: 10px;
+        }
+
+        .martial-arts {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dan-badge {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #1a0a2e, #0a1a2a);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .dan-badge .art {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            color: var(--neon-pink);
+            margin-bottom: 5px;
+        }
+
+        .dan-badge .rank {
+            color: var(--neon-blue);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <div class="about-container">
+        <a href="index.html" class="back-link">← BACK TO MAIN</a>
+
+        <h1 class="page-title">🧔🏻 ABOUT YOSHI 🧔🏻</h1>
+
+        <!-- Bio Header -->
+        <div class="bio-header">
+            <img src="./index_files/avatar.png" alt="Yoshi" class="bio-avatar">
+            <div class="bio-intro">
+                <h2>Yoshi Tacke</h2>
+                <p class="tagline">🎨 Creative Technologist | 🖨️ 3D Printing Enthusiast | 🎧 DJ & Music Lover</p>
+                <p>
+                    With over 10 years of experience in graphic design, 3D printing, IT, and music, I help colleagues
+                    and clients with creative and technical solutions. I'm a craftsman with an eye for detail and a
+                    passion for innovation and technology.
+                </p>
+                <p style="margin-top: 10px;">
+                    My work combines creativity and technology – from 3D printing and packaging design to web
+                    development
+                    and digital content creation. Always seeking new challenges and smart solutions!
+                </p>
+                <p style="margin-top: 10px;">
+                    🌍 <strong>International inspiration:</strong> My travels to America, Japan, and various European
+                    countries
+                    have broadened my perspective and inspire me in both work and hobbies.
+                </p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h3>🔹 SPECIALIZATIONS</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>🖨️ 3D Printing & Product Development</h4>
+                    <ul>
+                        <li>3D design and prototyping (Prusa Mini)</li>
+                        <li>Experimenting with new techniques</li>
+                        <li>Creative functional solutions</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>📦 Packaging Expertise</h4>
+                    <ul>
+                        <li>Package design & production</li>
+                        <li>Aluminum printing plates</li>
+                        <li>ISO-9001 quality standards</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>💻 Web & Digital</h4>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>WordPress & CMS management</li>
+                        <li>Content creation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>🎥 Media Production</h4>
+                    <ul>
+                        <li>Video editing & camera work</li>
+                        <li>Desktop publishing (DTP)</li>
+                        <li>Adobe Creative Suite</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h3>💼 EXPERIENCE</h3>
+            <div class="experience-item">
+                <h4>Desktop Publisher</h4>
+                <div class="company">Leeflang Verpakkingsdrukwerk</div>
+                <div class="date">Aug 2014 - Jul 2025 · 11 years</div>
+                <p>
+                    Specialized in prepress work, operating advanced folding machines (Heidelberg Stahlfolder),
+                    preparing aluminum printing plates, and ensuring ISO-9001 quality standards.
+                    Worked with Heidelberg Prinect, Signa Station, and Packaging Pro software.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h4>Video Editor & Reporter</h4>
+                <div class="company">RTV Connect (formerly TV Arnhem)</div>
+                <div class="date">Sep 2010 - Sep 2011 · 1 year</div>
+                <p>
+                    Camera operator and video editor for local television programs.
+                    Responsible for filming, editing, and conducting interviews for broadcast content.
+                </p>
+            </div>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="section">
+            <h3>🎮 HOBBIES & INTERESTS</h3>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <span class="emoji">🚴‍♂️</span>
+                    <span>Cycling</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🖨️</span>
+                    <span>3D Printing</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🌍</span>
+                    <span>Traveling</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🎧</span>
+                    <span>DJ & Music</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🎨</span>
+                    <span>Digital Art</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🃏</span>
+                    <span>Magic: The Gathering</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">📖</span>
+                    <span>Reading & Writing</span>
+                </div>
+                <div class="hobby-item">
+                    <span class="emoji">🕹️</span>
+                    <span>Tech & Gaming</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Martial Arts Section -->
+        <div class="section">
+            <h3>⚔️ MARTIAL ARTS</h3>
+            <div class="martial-arts">
+                <div class="dan-badge">
+                    <div class="art">JODO</div>
+                    <div class="rank">4th Dan (2018)</div>
+                </div>
+                <div class="dan-badge">
+                    <div class="art">KENDO</div>
+                    <div class="rank">Activity Committee Member</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; color: #ccc; font-size: 13px;">
+                Active member at Kendo Kai Higashi, organizing Japanese film nights and participating in
+                conventions like Tomo-con, Anime-con, and Abunai!
+            </p>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="section">
+            <h3>🌐 LANGUAGES</h3>
+            <div class="languages-list">
+                <div class="language">
+                    <span class="flag">🇳🇱</span>
+                    <span class="name">Dutch</span>
+                    <span class="level">Native</span>
+                </div>
+                <div class="language">
+                    <span class="flag">🇬🇧</span>
+                    <span class="name">English</span>
+                    <span class="level">Professional</span>
+                </div>
+                <div class="language">
+                    <span class="flag">🇯🇵</span>
+                    <span class="name">Japanese</span>
+                    <span class="level">Basic</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h3>✉️ GET IN TOUCH</h3>
+            <p style="color: #ccc; margin-bottom: 15px;">
+                Curious about collaboration or just want to chat about an idea?
+                I'm always open for a good conversation over a cup of coffee or tea! ☕
+            </p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <a href="mailto:yoshitacke@outlook.com">yoshitacke@outlook.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">💼</span>
+                    <a href="https://linkedin.com/in/yoshitacke" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

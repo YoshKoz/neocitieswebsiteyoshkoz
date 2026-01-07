@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~GUESTBOOK~*~ | YoShKoZ's 80's Paradise</title>
+    <link href="./index_files/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Guestbook-specific styles */
+        body {
+            overflow: auto;
+        }
+
+        .guestbook-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .guestbook-form {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            color: var(--neon-blue);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: #0a0a1a;
+            border: 2px solid var(--neon-purple);
+            color: var(--text-primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(180deg, var(--neon-purple), #5a00a0);
+            color: #fff;
+            padding: 12px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            border: 3px outset var(--neon-pink);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(180deg, var(--neon-pink), var(--neon-purple));
+            border-style: inset;
+            transform: translateY(2px);
+        }
+
+        .guestbook-entries {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .entry {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 5px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .entry::before {
+            content: '📝';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--card-bg);
+            padding: 0 5px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--neon-purple);
+        }
+
+        .entry-name {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 11px;
+            color: var(--neon-pink);
+        }
+
+        .entry-date {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .entry-message {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .entry-mood {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--neon-blue);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            padding: 8px 15px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: var(--neon-purple);
+            color: #fff;
+        }
+
+        .page-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            color: var(--neon-pink);
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px dashed var(--neon-purple);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <div class="guestbook-container">
+        <a href="index.html" class="back-link">← BACK TO MAIN</a>
+
+        <h1 class="page-title">📝 SIGN MY GUESTBOOK 📝</h1>
+
+        <div class="disclaimer">
+            ⚠️ This is a static site demo! In a real guestbook, entries would be saved.
+            Check out <a href="https://www.smartgb.com/" style="color: var(--neon-blue);">SmartGB</a> for a free hosted
+            guestbook! ⚠️
+        </div>
+
+        <!-- Guestbook Form -->
+        <div class="guestbook-form">
+            <h2
+                style="font-family: 'Press Start 2P', cursive; font-size: 12px; color: var(--neon-blue); margin-bottom: 15px;">
+                ✍️ LEAVE A MESSAGE
+            </h2>
+            <form id="guestbook-form">
+                <div class="form-group">
+                    <label>YOUR NAME *</label>
+                    <input type="text" name="name" required placeholder="What should I call you?">
+                </div>
+                <div class="form-group">
+                    <label>YOUR WEBSITE</label>
+                    <input type="url" name="website" placeholder="http://your-rad-site.neocities.org">
+                </div>
+                <div class="form-group">
+                    <label>YOUR MOOD</label>
+                    <select name="mood">
+                        <option value="😎">😎 Totally Rad</option>
+                        <option value="🤘">🤘 Rockin'</option>
+                        <option value="🎸">🎸 Jammin'</option>
+                        <option value="🕹️">🕹️ Gaming</option>
+                        <option value="📼">📼 Nostalgic</option>
+                        <option value="🌴">🌴 Chill</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>YOUR MESSAGE *</label>
+                    <textarea name="message" required
+                        placeholder="Tell me what you think of my 80's paradise!"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">📮 SIGN GUESTBOOK</button>
+            </form>
+        </div>
+
+        <!-- Sample Entries -->
+        <h2
+            style="font-family: 'Press Start 2P', cursive; font-size: 14px; color: var(--neon-pink); margin-bottom: 15px; text-align: center;">
+            📚 PREVIOUS ENTRIES
+        </h2>
+
+        <div class="guestbook-entries">
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-name">RetroFan2000</span>
+                    <span class="entry-date">01/07/2026</span>
+                </div>
+                <p class="entry-message">
+                    Dude, this site is TUBULAR! Takes me right back to the good old days of GeoCities.
+                    Keep the 80's dream alive! 🎵
+                </p>
+                <div class="entry-mood">Mood: 📼 Nostalgic</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-name">SynthWaveQueen</span>
+                    <span class="entry-date">01/06/2026</span>
+                </div>
+                <p class="entry-message">
+                    Love the neon vibes! Your music taste is impeccable. A-ha and Depeche Mode?
+                    You know what's up! Would love to trade mix tapes sometime! 🎹
+                </p>
+                <div class="entry-mood">Mood: 🎸 Jammin'</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-name">ArcadeMaster</span>
+                    <span class="entry-date">01/05/2026</span>
+                </div>
+                <p class="entry-message">
+                    Pac-Man AND Tetris? A person of culture! The scanline effect on this page is
+                    *chef's kiss*. Bookmarked forever! 🕹️
+                </p>
+                <div class="entry-mood">Mood: 🕹️ Gaming</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('guestbook-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thanks for signing! 📝\n\nIn a real guestbook, your message would be saved.\nThis is just a demo for the static site!');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
