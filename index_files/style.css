@@ -41,12 +41,11 @@ body {
 .page-container {
     width: 100%;
     max-width: 1920px;
-    min-height: 100vh;
     margin: 0 auto;
-    padding: 15px 25px;
+    padding: 15px 25px 25px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 header {
@@ -180,7 +179,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1.4fr 1fr;
     gap: 15px;
-    flex: 1;
+    align-items: start;
 }
 
 .column {
@@ -202,6 +201,7 @@ header {
     padding: 15px;
     box-shadow: 0 0 10px rgba(255, 20, 147, 0.2);
     transition: all 0.3s;
+    height: auto;
 }
 
 .interactive-card {
@@ -287,7 +287,9 @@ header {
     text-decoration: none;
     font-size: 14px;
     border: 2px outset var(--neon-pink);
+    border-radius: 3px;
     transition: all 0.2s;
+    display: inline-block;
 }
 
 .retro-btn:hover {
@@ -542,15 +544,8 @@ footer p {
         grid-template-columns: 1fr 1fr;
     }
 
-    .column:last-child {
-        grid-column: span 2;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .column:last-child .card {
-        margin: 0;
+    .center-column {
+        grid-row: span 2;
     }
 }
 
@@ -559,10 +554,8 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .column:last-child {
-        grid-column: span 1;
-        display: flex;
-        flex-direction: column;
+    .center-column {
+        grid-row: auto;
     }
 
     .header-content {
